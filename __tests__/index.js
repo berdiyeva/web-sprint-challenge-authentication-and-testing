@@ -15,6 +15,7 @@ describe("dad-jokes integration tests", () => {
 		expect(res.body.message).toBe("Welcome to Sprint Challenge!");
 	});
 
+	//change the name everytime when run the test, otherwise the test will fail!
 	it("POST /register", async () => {
 		const res = await supertest(server)
 			.post("/api/auth/register")
