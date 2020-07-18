@@ -60,4 +60,13 @@ router.post("/login", async (req, res, next) => {
 	}
 });
 
+router.get("/logout", (req, res, next) => {
+	try {
+		
+		res.redirect("/api/");
+	} catch (err) {
+		next(err);
+	}
+});
+
 module.exports = router;
