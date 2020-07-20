@@ -17,14 +17,6 @@ function getById(id) {
 	return db("users").select("id", "username").where({ id }).first();
 }
 
-// function remove(id) {
-// 	return db('users').where({id}).del()
-// }
-
-// function update(user, id) {
-// 	return db("users").where({id}).update(user)
-// }
-
 module.exports = {
 	get,
 	add,

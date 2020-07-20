@@ -13,6 +13,7 @@ const defaultCredentials = {
 };
 
 beforeEach((done) => {
+	// jest.setTimeout(10000);
 	db.migrate.rollback().then(() => {
 		db.migrate.latest().then(() => {
 			done();
@@ -54,6 +55,26 @@ describe("dad-jokes integration tests", () => {
 		expect(response.status).toBe(200);
 		expect(response.body).toHaveLength(20);
 	});
+
+	// it("GET /api/jokes/:id", async () => {
+	// 	// register new user
+	// 	await supertest(server)
+	// 		.post("/api/auth/register/")
+	// 		.send(defaultCredentials);
+
+	// 	// Login to get access token
+	// 	const accessToken = (
+	// 		await supertest(server).post("/api/auth/login").send(defaultCredentials)
+	// 	).body.token;
+
+	// 	const response = await supertest(server)
+	// 		.get("/api/jokes/1")
+	// 		.set("token", `Bearer ${accessToken}`);
+
+	// 	expect(response.status).toBe(200);
+	// 	expect(response.headers["content-type"]).toBe("application/json; charset=utf-8");
+	// 	expect(response.body.id).toBe(2);
+	// }, 100000);
 
 	it("POST /register create a new user accout", async () => {
 		const res = await supertest(server)

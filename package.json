@@ -6,7 +6,7 @@
   "scripts": {
     "test": "cross-env NODE_ENV=testing jest",
     "server": "cross-env NODE_ENV=development nodemon index.js",
-    "start": "node index.js"
+    "start": "cross-env NODE_ENV=development index.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,10 @@
     "helmet": "^3.23.3",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.1",
     "sqlite3": "^4.2.0"
   },
   "devDependencies": {
