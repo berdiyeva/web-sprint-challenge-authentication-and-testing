@@ -8,6 +8,8 @@ const jwt = require("jsonwebtoken");
 module.exports = (req, res, next) => {
 	try {
 		const token = req.headers.token.split("")[1];
+		req.token = token;
+
 		if (!token) {
 			return res.status(401).json({ message: "Missing token!" });
 		}

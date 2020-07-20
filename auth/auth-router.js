@@ -2,6 +2,7 @@ const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const Users = require("./auth-model");
+// const authenticate = require("./authenticate-middleware")
 
 router.post("/register", async (req, res, next) => {
 	// implement registration
@@ -60,10 +61,13 @@ router.post("/login", async (req, res, next) => {
 	}
 });
 
+//????
+
 router.get("/logout", (req, res, next) => {
 	try {
-		
-		res.redirect("/api/");
+		res.json({
+			message: "You have been successfully logged out.",
+		});
 	} catch (err) {
 		next(err);
 	}
