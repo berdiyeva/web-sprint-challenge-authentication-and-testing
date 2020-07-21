@@ -50,7 +50,7 @@ describe("dad-jokes integration tests", () => {
 
 		const response = await supertest(server)
 			.get("/api/jokes")
-			.set("token", `Bearer ${accessToken}`);
+			.set("token", accessToken);
 
 		expect(response.status).toBe(200);
 		expect(response.body).toHaveLength(20);
